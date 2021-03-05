@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bucket
+* source:	https://sketchfab.com/3d-models/bucket-9c8e168a0b064c6a9da08e5c3daa1cd5
+* author:	CowboyTruman (https://sketchfab.com/CowboyTruman)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bucket" (https://sketchfab.com/3d-models/bucket-9c8e168a0b064c6a9da08e5c3daa1cd5) by CowboyTruman (https://sketchfab.com/CowboyTruman) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
