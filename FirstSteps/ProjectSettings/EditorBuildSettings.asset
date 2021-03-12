@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/00-Lesson3/Project_ButterflyEffect/ButterflyEffect.unity
     guid: e0ff35b93e9680d4bbab9a5471e6c522
+  - enabled: 1
+    path: Assets/00-Lesson4/Particle_system.unity
+    guid: 1eea7705ac11d3d4abc0755f6bc918c8
   m_configObjects: {}
