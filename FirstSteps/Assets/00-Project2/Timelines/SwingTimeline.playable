@@ -363,8 +363,8 @@ MonoBehaviour:
   m_Name: Recorded (1)
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 8662164389283468105}
-  m_Position: {x: -0.001, y: -0.115, z: 0}
-  m_EulerAngles: {x: -0, y: 0, z: 0}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
   m_MatchTargetFields: 63
   m_RemoveStartOffset: 0
