@@ -520,7 +520,7 @@ ParticleSystem:
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   useRigidbodyForVelocity: 1
   startDelay:
     serializedVersion: 2
@@ -578,7 +578,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 2883
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10438,8 +10438,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: -1606686617491052714, guid: b131a334ba5cde44e845d4462090a45d, type: 2}
-    value: {fileID: 2062302392}
   - key: {fileID: 6754319026586793573, guid: b131a334ba5cde44e845d4462090a45d, type: 2}
     value: {fileID: 1321882778}
   - key: {fileID: -5781050656559980715, guid: b131a334ba5cde44e845d4462090a45d, type: 2}
