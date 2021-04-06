@@ -7,11 +7,13 @@ public class ColourController : MonoBehaviour
     float val = 0f;
     float colourSpeed = 0.8f;
     Animator animator;
+    ParticleSystem particleSys;
     bool colliding;
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
+        particleSys = transform.parent.GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -24,25 +26,31 @@ public class ColourController : MonoBehaviour
         }
     }
 
-    void OnTriggerStay(Collider other)
+    void OnCollisionStay(Collision other)
     {
         if (val < 1)
         {
+            print(val);
             val += Time.deltaTime * colourSpeed;
             animator.SetFloat("Colour", val);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         colliding = true;
         animator.SetTrigger("GoDown");
+        particleSys.Play();
+        animator.Play("ParticleAnimationSystem");
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision other)
     {
         colliding = false;
         animator.SetTrigger("GoUp");
+        particleSys.Stop();
+
+        // animator.StopPlayback("ParticleAnimationSystem");
     }
 
 }
