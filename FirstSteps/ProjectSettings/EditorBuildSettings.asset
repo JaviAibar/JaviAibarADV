@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/00-Project2/CuckooClock.unity
-    guid: cf0390b7c138a2a4abe7d51e2fb362bc
   - enabled: 1
     path: Assets/00-Lesson7/StateMachine_portfolio.unity
     guid: 76dc0ac37b652d048b1d758618d8e2d8

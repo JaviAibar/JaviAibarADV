@@ -30,7 +30,6 @@ public class ColourController : MonoBehaviour
     {
         if (val < 1)
         {
-            print(val);
             val += Time.deltaTime * colourSpeed;
             animator.SetFloat("Colour", val);
         }
@@ -41,7 +40,6 @@ public class ColourController : MonoBehaviour
         colliding = true;
         animator.SetTrigger("GoDown");
         particleSys.Play();
-        animator.Play("ParticleAnimationSystem");
     }
 
     private void OnCollisionExit(Collision other)

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public float m_Speed = 5f;
+    public float m_Speed = 8f;
+    private Rigidbody rb;
 
-    // Start is called before the first frame update
-    void FixedUpdate()
+    private void Start()
     {
-        Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.Translate(m_Input*Time.deltaTime*m_Speed);
+        rb = GetComponent<Rigidbody>();
+    }
+    private void FixedUpdate()
+    {
+        float factor = Time.deltaTime * m_Speed;
+        rb.AddForce(new Vector3(Input.GetAxis("Vertical"), 0, -Input.GetAxis("Horizontal"))*m_Speed*100*Time.deltaTime);
     }
 
 }
