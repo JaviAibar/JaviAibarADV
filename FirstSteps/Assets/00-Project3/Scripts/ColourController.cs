@@ -9,11 +9,13 @@ public class ColourController : MonoBehaviour
     Animator animator;
     ParticleSystem particleSys;
     bool colliding;
+    private AudioSource _audio;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInParent<Animator>();
         particleSys = transform.parent.GetComponentInChildren<ParticleSystem>();
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class ColourController : MonoBehaviour
         colliding = true;
         animator.SetTrigger("GoDown");
         particleSys.Play();
-        print("enter");
+        _audio.Play();
     }
 
     private void OnCollisionExit(Collision other)
@@ -48,8 +50,7 @@ public class ColourController : MonoBehaviour
         colliding = false;
         animator.SetTrigger("GoUp");
         particleSys.Stop();
-        print("enter");
-
+        _audio.Stop();
         // animator.StopPlayback("ParticleAnimationSystem");
     }
 
