@@ -1,0 +1,2 @@
+In order to save a lot of time and increase the quality of the portfolio at the same time. I did not only downloaded the free 3D futuristic pack from the user Barking_Dog (3D Free Modular Kit) but I also used the example scene they provided just adapting the space to be fewer
+Fire effects courtesy of Jeff Johnson (Digital Ruby) with some little changes and the adaptation to Render Pipeline
