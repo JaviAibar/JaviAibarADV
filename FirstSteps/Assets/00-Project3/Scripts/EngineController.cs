@@ -10,7 +10,6 @@ public class EngineController : MonoBehaviour
     public Animator reactorFire;
     public GameObject particleSystems;
     public TMPro.TextMeshPro text;
-    //private Animator textAnimator;
     public PlayableDirector timeline;
     private bool playMessage = false;
     private AudioSource _audio;
@@ -30,7 +29,7 @@ public class EngineController : MonoBehaviour
     {
         if (other.name == "Collider")
         {
-            text.text = "Click Space to activate engines!!";
+            text.text = "Click Space to switch the engines!!";
             //  timeline.gameObject.SetActive(true);
             if (playMessage)
             {
@@ -75,19 +74,11 @@ public class EngineController : MonoBehaviour
         }
         else
         {
+            isPlaying = false;
             _audio.loop = false;
             _audio.clip = stopEngineClip;
             _audio.Play();
         }
-        /*if (isPlaying)
-        {
-
-        } else
-        {
-
-        }*/
-        // _audio.clip = audioClips[0];
-        //_audio.Play();
     }
 
 
