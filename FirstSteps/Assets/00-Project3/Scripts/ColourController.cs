@@ -10,7 +10,7 @@ public class ColourController : MonoBehaviour
     ParticleSystem particleSys;
     bool colliding;
     private AudioSource _audio;
-    // Start is called before the first frame update
+
     void Start()
     {
         animator = GetComponentInParent<Animator>();
@@ -18,9 +18,10 @@ public class ColourController : MonoBehaviour
         _audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        // When the ball steps off the button, the val decreases and the button return to the original state
         if (val > 0 && !colliding)
         {
             val -= Time.deltaTime * colourSpeed;
@@ -30,6 +31,8 @@ public class ColourController : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
+        // As long as the ball collides the colliders of the buttons, the value increases
+        // up to 1 and the animation starts to run along the value passed by argument
         if (val < 1)
         {
             val += Time.deltaTime * colourSpeed;
@@ -37,11 +40,14 @@ public class ColourController : MonoBehaviour
         }
     }
 
+    // The colliding flag in the following two methods is set because otherwise it'd be all the time
+    // increasing and decreasing at the same time the variable val so the effect was like it was stopped
     private void OnCollisionEnter(Collision other)
     {
         colliding = true;
         animator.SetTrigger("GoDown");
         particleSys.Play();
+        // When the ball starts colliding, the sound plays
         _audio.Play();
     }
 
@@ -50,8 +56,8 @@ public class ColourController : MonoBehaviour
         colliding = false;
         animator.SetTrigger("GoUp");
         particleSys.Stop();
+        // When the ball stops colliding, the sound stops as well
         _audio.Stop();
-        // animator.StopPlayback("ParticleAnimationSystem");
     }
 
 }
