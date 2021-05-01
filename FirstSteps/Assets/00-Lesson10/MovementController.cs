@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MovementController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
+       // characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -55,5 +56,7 @@ public class MovementController : MonoBehaviour
 
         animator.SetFloat("Vertical", newVerticalValue);
         animator.SetFloat("Horizontal", newHorizontalValue);
+
+       // GetComponent<NavMeshAgent>().destination = ;
     }
 }
