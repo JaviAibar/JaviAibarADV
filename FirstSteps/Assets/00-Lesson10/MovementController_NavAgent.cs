@@ -54,9 +54,12 @@ public class MovementController_NavAgent : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Drinking"))
         {
             wineInHand.SetActive(true);
-            
+          /*  animator.SetFloat("Horizontal", Mathf.Lerp(animator.GetFloat("Horizontal"), 0, 0.1f));
+            animator.SetFloat("Vertical", Mathf.Lerp(animator.GetFloat("Vertical"), 0, 0.1f));*/
+            agent.Stop();
         } else
         {
+            agent.Resume();
             wineInHand.SetActive(false);
             Vector3 dir = transform.InverseTransformDirection(agent.velocity);
             animator.SetFloat("Horizontal", dir.x);
