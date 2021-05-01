@@ -8,7 +8,6 @@ public class MovementController_NavAgent : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform wine;
-    [SerializeField] private float downaccel = 1;
     [SerializeField] private GameObject wineInHand;
     private bool isJumping = false;
     //public Transform hand;
@@ -24,7 +23,7 @@ public class MovementController_NavAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.Move(Vector3.down * downaccel * Time.deltaTime);
+        
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -54,14 +53,15 @@ public class MovementController_NavAgent : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Drinking"))
         {
             wineInHand.SetActive(true);
-          /*  animator.SetFloat("Horizontal", Mathf.Lerp(animator.GetFloat("Horizontal"), 0, 0.1f));
-            animator.SetFloat("Vertical", Mathf.Lerp(animator.GetFloat("Vertical"), 0, 0.1f));*/
             agent.Stop();
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical",0);
         } else
         {
             agent.Resume();
             wineInHand.SetActive(false);
             Vector3 dir = transform.InverseTransformDirection(agent.velocity);
+            print(agent.velocity);
             animator.SetFloat("Horizontal", dir.x);
             animator.SetFloat("Vertical", dir.z);
         }
