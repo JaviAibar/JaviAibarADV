@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/00-Lesson10/Portfolio7.unity
-    guid: c2efb397f367719439bf227d44aeee19
   - enabled: 1
-    path: Assets/00-Lesson10/Portfolio8 NavMesh.unity
-    guid: adbbb773b8fc83747971a966e1cf7d25
+    path: Assets/00-Project4/Project4.unity
+    guid: 5628ef03a4189c74ba1cc3509a73e564
   m_configObjects: {}
