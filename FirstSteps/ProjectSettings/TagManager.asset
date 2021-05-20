@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - Wine
+  - Destination
   layers:
   - Default
   - TransparentFX
