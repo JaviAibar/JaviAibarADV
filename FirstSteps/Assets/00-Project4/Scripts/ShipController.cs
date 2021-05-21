@@ -7,11 +7,13 @@ public class ShipController : MonoBehaviour
 {
     [SerializeField] private int lifes = 3;
     [SerializeField] private TextMeshProUGUI text;
+    private Animator _anim;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateText();
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class ShipController : MonoBehaviour
         }
         else
         {
-            print("You lost");
+            _anim.SetTrigger("Sink");
         }
     }
 

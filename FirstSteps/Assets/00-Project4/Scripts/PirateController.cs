@@ -9,6 +9,7 @@ public class PirateController : MonoBehaviour
     public float timer;
     [SerializeField] private int lifes = 10;
     public Animator cameraAnimator;
+    private Animator _anim;
     public ShipController ship;
     [SerializeField] private GameObject cannonBall;
     [SerializeField] private float speed = 2f;
@@ -19,6 +20,7 @@ public class PirateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _anim = GetComponent<Animator>();
         timer = 0;
         UpdateText();
     }
@@ -27,7 +29,7 @@ public class PirateController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer % 5 < 0.01f && !shot)
+        if (timer % 5 < 0.01f && !shot && lifes > 0)
         {
             shot = true;
             ship.Hit();
@@ -52,7 +54,7 @@ public class PirateController : MonoBehaviour
         }
         else
         {
-            print("You won!");
+            _anim.SetTrigger("Sink");
         }
     }
     public IEnumerator ScreenShaking()
