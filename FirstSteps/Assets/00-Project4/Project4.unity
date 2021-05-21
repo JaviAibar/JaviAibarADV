@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 655272653}
   - component: {fileID: 655272652}
   - component: {fileID: 655272655}
-  - component: {fileID: 655272654}
+  - component: {fileID: 655272656}
   m_Layer: 0
   m_Name: Barrel_03
   m_TagString: Untagged
@@ -1400,7 +1400,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3138238375150994862}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 91.72, z: -35.352}
+  m_LocalEulerAnglesHint: {x: 34, y: 269, z: 43}
 --- !u!23 &655272652
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1448,19 +1448,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655272650}
   m_Mesh: {fileID: 4300074, guid: e286625af9da2b94a8090be8dea80dea, type: 3}
---- !u!65 &655272654
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 655272650}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0153017, y: 1.2977744, z: 0.96561235}
-  m_Center: {x: -0.0000009536743, y: -0.0000002980232, z: 0.0000012069944}
 --- !u!54 &655272655
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1477,6 +1464,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &655272656
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655272650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &695811876
 GameObject:
   m_ObjectHideFlags: 0
@@ -7536,6 +7542,8 @@ PlayableDirector:
     value: {fileID: 1008579917}
   - key: {fileID: -7678222958454286273, guid: de70d77d3a65ea243a98a633e5698ef9, type: 2}
     value: {fileID: 2105063031}
+  - key: {fileID: -3988373508646378833, guid: de70d77d3a65ea243a98a633e5698ef9, type: 2}
+    value: {fileID: 655272656}
   m_ExposedReferences:
     m_References:
     - 5a739ce898d2a874e95665b45e8fc041: {fileID: 2084805708}
