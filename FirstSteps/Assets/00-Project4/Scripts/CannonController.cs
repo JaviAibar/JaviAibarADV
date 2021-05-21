@@ -22,7 +22,7 @@ public class CannonController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetKey(KeyCode.Space))
+        if (other.CompareTag("Player") && Input.GetKey(KeyCode.Space) && !_anim.GetCurrentAnimatorStateInfo(0).IsName("CannonGetsHot"))
         {
             //_anim.SetBool("isHot", isHot);
             _anim.SetTrigger("isHot");
