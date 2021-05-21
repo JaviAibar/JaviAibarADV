@@ -31,7 +31,7 @@ public class CannonController : MonoBehaviour
             //_anim.SetBool("isHot", isHot);
             ThrowCannonBall(Vector3.right);
             _anim.SetTrigger("isHot");
-            _audio.Play();
+            
             pirate.Hit();
         }
     }
@@ -43,5 +43,6 @@ public class CannonController : MonoBehaviour
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
         ballRB.AddForce(dir * 30 * speed, ForceMode.Impulse);
         Destroy(ball, 12);
+        _audio.Play();
     }
 }

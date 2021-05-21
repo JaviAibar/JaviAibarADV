@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PirateController : MonoBehaviour
 {
@@ -11,12 +13,14 @@ public class PirateController : MonoBehaviour
     [SerializeField] private GameObject cannonBall;
     [SerializeField] private float speed = 2f;
     [SerializeField] private CannonController[] cannons;
+    [SerializeField] private TextMeshProUGUI text;
     private bool shot = false;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0;
+        UpdateText();
     }
 
     // Update is called once per frame
@@ -43,6 +47,8 @@ public class PirateController : MonoBehaviour
         if (lifes > 0)
         {
             lifes--;
+            UpdateText();
+
         }
         else
         {
@@ -53,8 +59,13 @@ public class PirateController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
 
-
         cameraAnimator.SetTrigger("Hit");
+    }
+
+    public void UpdateText()
+    {
+        text.text = "" + lifes;
+
     }
 
 }
