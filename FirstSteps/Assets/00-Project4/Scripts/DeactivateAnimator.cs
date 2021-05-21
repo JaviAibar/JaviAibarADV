@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DeactivateAnimator : MonoBehaviour
 {
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ActivateTheAnimator();
     }
 
     // Update is called once per frame
@@ -18,6 +19,11 @@ public class DeactivateAnimator : MonoBehaviour
 
     void DeactivateTheAnimator()
     {
-        GetComponent<Animator>().enabled = false;
+        animator.enabled = false;
+    }
+
+    void ActivateTheAnimator()
+    {
+        animator.enabled = true;
     }
 }
