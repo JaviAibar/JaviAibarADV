@@ -8,6 +8,11 @@ public class PirateController : MonoBehaviour
     [SerializeField] private int lifes = 10;
     public Animator cameraAnimator;
     public ShipController ship;
+    [SerializeField] private GameObject cannonBall;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private CannonController[] cannons;
+    private bool shot = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +23,18 @@ public class PirateController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer % 5 < 0.01f)
+        if (timer % 5 < 0.01f && !shot)
         {
+            shot = true;
             ship.Hit();
-            cameraAnimator.SetTrigger("Hit");
+            int rand = Random.Range(0, cannons.Length);
+            cannons[rand].ThrowCannonBall(Vector3.left);
+
+            StartCoroutine(ScreenShaking());
+
+        } else 
+        {
+            shot = false;
         }
     }
 
@@ -36,4 +49,12 @@ public class PirateController : MonoBehaviour
             print("You won!");
         }
     }
+    public IEnumerator ScreenShaking()
+    {
+        yield return new WaitForSeconds(0.6f);
+
+
+        cameraAnimator.SetTrigger("Hit");
+    }
+
 }

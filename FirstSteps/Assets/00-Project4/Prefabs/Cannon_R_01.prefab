@@ -122,6 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c040a5625e0c2141bc34e913d122a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  cannonBall: {fileID: 4076401441823390882, guid: f323483da5461b64fb347a6cdb4b62db,
+    type: 3}
+  pirate: {fileID: 0}
 --- !u!95 &3928146521653460191
 Animator:
   serializedVersion: 3

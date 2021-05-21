@@ -23,7 +23,6 @@ public class SailorAgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(agent.isOnOffMeshLink);
         if (isRunning && agent.isOnOffMeshLink)
         {
             SetNewDestination();
