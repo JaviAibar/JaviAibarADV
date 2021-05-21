@@ -7,6 +7,7 @@ public class CannonController : MonoBehaviour
     private Animator _anim;
     private AudioSource _audio;
     private bool isHot = false;
+    [SerializeField] private PirateController pirate;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class CannonController : MonoBehaviour
             //_anim.SetBool("isHot", isHot);
             _anim.SetTrigger("isHot");
             _audio.Play();
-            print("SHOOOTING!!");
+            pirate.Hit();
         }
     }
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class PirateController : MonoBehaviour
 {
     public float timer;
+    [SerializeField] private int lifes = 10;
     public Animator cameraAnimator;
+    public ShipController ship;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,20 @@ public class PirateController : MonoBehaviour
         timer += Time.deltaTime;
         if (timer % 5 < 0.01f)
         {
-            print("HIT");
+            ship.Hit();
             cameraAnimator.SetTrigger("Hit");
+        }
+    }
+
+    public void Hit()
+    {
+        if (lifes > 0)
+        {
+            lifes--;
+        }
+        else
+        {
+            print("You won!");
         }
     }
 }
