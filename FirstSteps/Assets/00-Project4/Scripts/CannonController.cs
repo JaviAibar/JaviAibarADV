@@ -18,17 +18,11 @@ public class CannonController : MonoBehaviour
         _audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerStay(Collider other)
     {
+        // If the player is close to a cannon and press Space it will throw a cannon ball
         if (other.CompareTag("Player") && Input.GetKey(KeyCode.Space) && !_anim.GetCurrentAnimatorStateInfo(0).IsName("CannonGetsHot"))
         {
-            //_anim.SetBool("isHot", isHot);
             ThrowCannonBall(Vector3.right);
             _anim.SetTrigger("isHot");
             
@@ -38,6 +32,7 @@ public class CannonController : MonoBehaviour
 
     public void ThrowCannonBall(Vector3 dir)
     {
+        // We instantiate a ball that will be thrown to the enemy
         GameObject ball = Instantiate(cannonBall, transform);
         ball.transform.position += Vector3.up * 1.5f;
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
